@@ -1,0 +1,148 @@
+@tailwind base;
+
+@font-face {
+  font-family: 'Dirtyline';
+  src: url(../font/Dirtyline36daysoftype.otf);
+}
+
+@font-face {
+  font-family: 'DxGrafik-BlackItalic';
+  src: url(../font/DxGrafik-BlackItalic.otf);
+}
+
+@font-face {
+  font-family: 'DxGrafik-SemiBold';
+  src: url(../font/DxGrafik-SemiBold.otf);
+}
+
+@font-face {
+    font-family: 'Magtis';
+    src: url(../font/MAGTIS-EXTRABOLD-FREE\ PERSONAL\ USE.OTF);
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+#Layer_2 {
+    transform: scale(0.3);
+    transform-origin: center center;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'DxGrafik-SemiBold', sans-serif;
+    background-color: rgb(9 9 11);
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card {
+    position: absolute; 
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+
+}
+
+#card-1 {
+    width: 250px;
+    height: 250px;
+    top: 20%;
+    left: 37%;
+}
+
+#card-2 {
+    top: 50%;
+    left: 47%;
+}
+
+#card-3 {
+    top: 15%;
+    left: 57%;
+}
+
+#card-4 {
+    top: 55%;
+    left: 67%;
+}
+
+.main h1 {
+    transform: translate(-50%, -50%);
+    width: max-content;
+}
+
+
+
+@media (max-width: 1024px) {
+  
+
+  .wrapper-hero {
+    width: 300vw;
+  }
+
+  .title {
+    font-size: 20vw;
+  }
+
+  .main h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .wrapper-hero {
+    width: 200vw;
+  }
+
+  .title {
+    font-size: 15vw;
+  }
+
+  .main h1 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+  .wrapper-hero {
+    width: 150vw;
+  }
+
+  .title {
+    font-size: 10vw;
+  }
+
+  .main h1 {
+    font-size: 10px;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
