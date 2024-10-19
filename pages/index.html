@@ -51,7 +51,38 @@
             </section>
             <section class="absolute top-[250vh]">
                 <div class=" h-screen w-screen bg-zinc-100 rounded-3xl">
-                    coucou
+                    <div class="p-8"></div>
+                        <h2 class="text-4xl font-bold mb-4">Fonctionnalités d'Alpine.js</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-semibold">Réactivité</h3>
+                                <p class="mb-2">Alpine.js permet de rendre vos interfaces réactives avec une syntaxe simple et intuitive.</p>
+                                <div x-data="{ count: 0 }" class="p-4 bg-zinc-200 rounded-lg">
+                                    <button @click="count++" class="px-4 py-2 bg-blue-500 text-white rounded">Incrémenter</button>
+                                    <span class="ml-4 text-xl" x-text="count"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Affichage conditionnel</h3>
+                                <p class="mb-2">Affichez ou masquez des éléments en fonction de l'état de vos données.</p>
+                                <div x-data="{ open: false }" class="p-4 bg-zinc-200 rounded-lg">
+                                    <button @click="open = !open" class="px-4 py-2 bg-blue-500 text-white rounded">Afficher/Masquer</button>
+                                    <div x-show="open" class="mt-4 p-4 bg-white rounded shadow">
+                                        Contenu conditionnellement affiché.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Boucles</h3>
+                                <p class="mb-2">Répétez des éléments en utilisant des boucles.</p>
+                                <div x-data="{ items: ['Item 1', 'Item 2', 'Item 3'] }" class="p-4 bg-zinc-200 rounded-lg">
+                                    <template x-for="item in items" :key="item">
+                                        <div class="p-2 bg-white rounded shadow mb-2" x-text="item"></div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div> 
             </section>
             
