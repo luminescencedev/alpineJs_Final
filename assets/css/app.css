@@ -40,9 +40,15 @@ html.lenis, html.lenis body {
     pointer-events: none;
   }
 
-#Layer_2 {
+.main svg#Layer_2 {
     transform: scale(0.3);
     transform-origin: center center;
+}
+
+.wrapper-hero div svg#Layer_2 {
+  position: absolute;
+  transform:translateY(-12px) scale(0.1) ;
+  -webkit-transform:translateY(-12px) scale(0.1);
 }
 
 
@@ -58,6 +64,14 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.arrow {
+  border: solid rgb(255, 255, 255);
+  border-width: 0 25px 25px 0;
+  padding: 25px;
+  transform:translateY(-16px)  rotate(-45deg);
+  -webkit-transform:translateY(-16px)  rotate(-45deg);
 }
 
 .card {

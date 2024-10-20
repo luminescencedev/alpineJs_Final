@@ -15,9 +15,26 @@
     <style>
         [x-cloak] { display: none; }
     </style>
-    <main class="h-[350vh] overflow-hidden">
+    <main class="h-[350vh] overflow-hidden z-50">
         <div class="bg-zinc-950 h-[600vh] w-screen container flex flex-col">
             <section class="wrapper-hero absolute w-[400vw] h-screen will-change-transform flex-grow-[2]">
+                <div class="absolute left-0 h-screen w-screen flex items-center  gap-8 p-6">
+                    <h2 class="font-[Dirtyline] text-[10vw] text-zinc-100">SCROLL</h2>
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.89 108.89">
+                    <defs>
+                        <style>
+                        .cls-1 {
+                            fill: #73b6ff;
+                            stroke-width: 0px;
+                        }
+                        </style>
+                    </defs>
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path class="cls-1" d="M108.89,53.34v2.92h-.39c-29.14,0-52.78,23.54-52.93,52.63h-2.62c-.16-29.1-23.81-52.63-52.95-52.63v-2.92C29.24,53.34,52.95,29.63,52.95.39v-.39h2.62v.39c0,29.24,23.69,52.95,52.93,52.95h.39Z"/>
+                    </g>
+                    </svg>
+                </div>
                 <h1 class="title font-[Magtis] w-full text-[38vw] text-center text-zinc-100">AlpineJs</h1>
                 <div class="card" id="card-1">
                     <img src="../assets/img/alpineLogo.png" alt="">
@@ -29,7 +46,7 @@
                     <img src="../assets/img/cssLogo.png" alt="">
                 </div>
                 <div class="card" id="card-4">
-                    <img src="../assets/img/jsLogo.png" alt="">
+                    <img src="../assets/img/tailwindLogo.jpg" alt="">
                 </div>
             </section>
             <section class="main absolute top-[150vh] w-full h-full flex-grow overflow-hidden">
@@ -49,17 +66,18 @@
                     </g>
                 </svg>     
             </section>
-            <section class="absolute top-[250vh]">
-                <div class=" h-screen w-screen bg-zinc-100 rounded-3xl">
+            <section class=" absolute h-full w-full top-[230vh]">
+                <div class="z-50 h-[200vh] p-16 bg-zinc-100 rounded-3xl">
                     <div class="p-8"></div>
                         <h2 class="text-4xl font-bold mb-4">Fonctionnalités d'Alpine.js</h2>
                         <div class="space-y-6">
                             <div>
                                 <h3 class="text-2xl font-semibold">Réactivité</h3>
                                 <p class="mb-2">Alpine.js permet de rendre vos interfaces réactives avec une syntaxe simple et intuitive.</p>
-                                <div x-data="{ count: 0 }" class="p-4 bg-zinc-200 rounded-lg">
+                                <div x-data="{ count: 0 }" class="p-4 bg-zinc-200 mx-auto rounded-lg">
                                     <button @click="count++" class="px-4 py-2 bg-blue-500 text-white rounded">Incrémenter</button>
-                                    <span class="ml-4 text-xl" x-text="count"></span>
+                                    <span class="mx-4 text-xl" x-text="count"></span>
+                                    <button @click="count--" class="px-4 py-2 bg-red-500 text-white rounded">Décrémenter</button>
                                 </div>
                             </div>
                             <div>
@@ -73,12 +91,19 @@
                                 </div>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Boucles</h3>
-                                <p class="mb-2">Répétez des éléments en utilisant des boucles.</p>
-                                <div x-data="{ items: ['Item 1', 'Item 2', 'Item 3'] }" class="p-4 bg-zinc-200 rounded-lg">
-                                    <template x-for="item in items" :key="item">
-                                        <div class="p-2 bg-white rounded shadow mb-2" x-text="item"></div>
-                                    </template>
+                                <h3 class="text-2xl font-semibold">Todo List</h3>
+                                <p class="mb-2">Gérez une liste de tâches avec Alpine.js.</p>
+                                <div x-data="{ newTodo: '', todos: [] }" class="p-4 bg-zinc-200 rounded-lg">
+                                    <input x-model="newTodo" type="text" placeholder="Nouvelle tâche" class="px-4 py-2 border rounded w-full mb-2">
+                                    <button @click="if(newTodo.trim() !== '') { todos.push(newTodo); newTodo = ''; }" class="px-4 py-2 bg-blue-500 text-white rounded">Ajouter</button>
+                                    <ul :class="{ 'mt-4': todos.length > 0 }"></ul>
+                                        <template x-for="(todo, index) in todos" :key="index">
+                                            <li class="p-2 bg-white rounded shadow mb-2 flex justify-between items-center">
+                                                <span x-text="todo"></span>
+                                                <button @click="todos.splice(index, 1)" class="px-2 py-1 bg-red-500 text-white rounded">Supprimer</button>
+                                            </li>
+                                        </template>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const svgElement = document.querySelector('svg');
+    const svgElement = document.querySelector('.main svg');
 
     gsap.set(svgElement, {
         scale: 1,
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gsap.to(svgElement, {
                 y: `${-100 * self.progress}vw`,
                 scale: scale,
-                duration: 0.5,
+                duration: 1,
                 ease: "power3.out",
             });
         },
