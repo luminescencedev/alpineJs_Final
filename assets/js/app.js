@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ScrollTrigger.create({
         trigger: svgElement,
         start: "top top",
-        end: "+=1600vh",
+        end: "+=1200vh",
         scrub: 1,
         pin: true,
         onUpdate: (self) => {
