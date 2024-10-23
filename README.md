@@ -40,7 +40,7 @@
 - `pages/index.html`: Fichier HTML principal contenant la structure de la page et les éléments interactifs.
 - `assets/css/app.css`: Feuille de style principale avec les définitions de styles personnalisés.
 - `assets/css/tailwind.css`: Feuille de style générée par TailwindCSS avec les utilitaires CSS.
-- `assets/js/app;js`: Fichier js contenant les fonctions et outils javascript.
+- `assets/js/app.js`: Fichier js contenant les fonctions et outils javascript.
 
 ## Technologies Utilisées
 
