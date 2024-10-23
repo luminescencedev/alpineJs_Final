@@ -124,7 +124,7 @@
                                         <button @click="filter = 'completed'" class="border-zinc-500/20 border px-4 py-2 bg-zinc-300 text-zinc-900 rounded hover:border-zinc-800/50 hover:bg-zinc-400">Terminées</button>
                                     </div>
                             
-                                    <ul x-show="tasks.length > 0" class="bg-zinc-700 focus:bg-zinc-500 rounded pl-3 pr-1 border-zinc-500/20 border">
+                                    <ul x-show="tasks.length > 0" class="bg-zinc-300 focus:bg-zinc-500 rounded pl-3 pr-1 border-zinc-500/20 border">
                                         <template x-for="task in filteredTasks" :key="task.id">
                                             <li class="task flex justify-between items-center my-1 " :class="{ completed: task.completed }">
                                                 <span x-text="task.text" class="flex-grow"></span>
