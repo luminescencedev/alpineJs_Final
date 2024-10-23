@@ -164,7 +164,40 @@
                                 <button @click="open1 = !open1" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 mt-8 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
                         </div>
                         <div id="projet" x-show="open2" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center ">
-                            <button @click="open2 = !open2" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 mt-8 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
+                            <div class="description p-6">
+                                <h2 class="text-2xl font-semibold mb-4">Présentation du projet</h2>
+                                <p class="text-gray-700 mb-6">
+                                    Ce projet a été réalisé dans le cadre d'un cours d'AlpineJs. Il s'agit d'une application web interactive utilisant la bibliothèque Alpine.js pour ajouter de linteractivité à l'interface utilisateur.
+                                </p>
+
+                                <h3 class="text-xl font-medium mb-3">Fonctionnalités principales :</h3>
+                                <ul class="list-disc list-inside mb-6 text-gray-700">
+                                    <li>Jeux interactifs : Morpion, Puissance 4, Memory.</li>
+                                    <li>Présentation professionnelle d'Alpine.js.</li>
+                                    <li>Section sur le projet et son développement.</li>
+                                </ul>
+
+                                <h3 class="text-xl font-medium mb-3">Technologies utilisées :</h3>
+                                <ul class="list-disc list-inside mb-6 text-gray-700">
+                                    <li>HTML, CSS, JavaScript.</li>
+                                    <li>Alpine.js, Tailwind CSS.</li>
+                                    <li>GSAP : ScrollTrigger.</li>
+                                    <li>Lenis : Smooth Scroll.</li>
+                                </ul>
+
+                                <h3 class="text-xl font-medium mb-3">Objectifs du projet :</h3>
+                                <ul class="list-disc list-inside mb-6 text-gray-700">
+                                    <li>Expérimenter avec Alpine.js</li>
+                                    <li>Créer une application web interactive utilisant Alpine.js</li>
+                                </ul>
+
+                                <h3 class="text-xl font-medium mb-3">Conclusion :</h3>
+                                <p class="text-gray-700">
+                                    Ce projet a été une excellente occasion d'explorer les possibilités offertes par Alpine.js et de créer une application web interactive et amusante. J'espère que vous apprécierez les jeux et les fonctionnalités présentés dans cette application !
+                                </p>
+                                <button @click="open2 = !open2" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 mt-8 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
+                            </div>
+                            
                         </div>
                         <div id="morpion" x-show="open3" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center">
                             <div class="app h-full w-full flex justify-center items-center flex-col">
@@ -232,7 +265,13 @@
                               </div>
                             </div>
                           </div>
-                        <div id="about" x-show="open6" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center ">
+                        <div id="about" x-show="open6" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex-col flex justify-center items-center ">
+                            <div class="about">
+                                <h2 class="text-2xl font-semibold mb-4">À propos de moi</h2>
+                                <p class="text-gray-700 mb-6">
+                                    Je m'appelle Arthur GARNIER, je suis un apprenti développeur web en bé dev web et application a EFREI Paris.
+                                </p>
+                            </div>
                             <button @click="open6 = !open6" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 mt-8 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
                         </div>
                         <div x-show="!(open1 || open2 || open3 || open4 || open5 || open6)" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full grid grid-cols-3 grid-rows-2 gap-12">
