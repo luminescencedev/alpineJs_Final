@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/alpineLogo.png" type="image/x-icon">
     <script defer src="../node_modules/alpinejs/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/css/tailwind.css">
-    <title>Alpine</title>
+    <title>AlpineJs Projet</title>
 </head>
 <body>
     <style>
         [x-cloak] { display: none; }
     </style>
-    <main class="h-[312vh] overflow-hidden z-50">
+    <main class="h-[312vh] overflow-hidden z-50 font-[DxGrafik-SemiBold]">
         <div class="bg-zinc-950 h-[300vh] w-screen container flex flex-col">
             <section class="wrapper-hero absolute w-[400vw] h-screen will-change-transform flex-grow-[2]">
                 <div class="absolute left-0 h-screen w-screen flex items-center  gap-8 p-6">
-                    <h2 class="font-[Dirtyline] text-[10vw] text-zinc-100">SCROLL</h2>
+                    <h2 class="font-[Magtis] text-[10vw] text-zinc-100">Scroll</h2>
                     <?xml version="1.0" encoding="UTF-8"?>
                     <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.89 108.89">
                     <defs>
@@ -69,23 +70,170 @@
             <section class="absolute h-full w-full top-[222vh]">
                 <div class="z-50 h-[100vh] p-16 bg-zinc-100 rounded-3xl">
                     <div x-cloak x-data="{ open1: false, open2: false, open3: false, open4: false, open5: false, open6: false }" class="h-full w-full p-12 rounded-3xl ombre-int" style="background: rgb(240, 240, 240);">
-                        <div id="alpine" x-show="open1" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
-                            <h1 @click="open1 = !open1" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        <div id="alpine" x-show="open1" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex flex-col justify-start items-start p-8 rounded-2xl shadow-lg overflow-y-auto ">
+                            <h2 class="text-2xl font-semibold mb-4">Présentation professionnelle d'Alpine.js</h2>
+                                <p class="text-gray-700 mb-6">
+                                    Alpine.js est une bibliothèque JavaScript légère conçue pour ajouter de l’interactivité à vos applications web sans avoir besoin de frameworks lourds. Avec moins de 10kB, il est parfait pour des projets qui nécessitent une manipulation DOM réactive tout en étant simple à intégrer et à utiliser.
+                                </p>
+
+                                <h3 class="text-xl font-medium mb-3">Pourquoi utiliser Alpine.js ?</h3>
+                                <ul class="list-disc list-inside mb-6 text-gray-700">
+                                    <li>Léger et rapide : Moins de 10kB, aucune compilation nécessaire.</li>
+                                    <li>Syntaxe simple et intuitive, directement dans le HTML.</li>
+                                    <li>Idéal pour des interactions légères et des interfaces réactives.</li>
+                                    <li>Facile à intégrer dans des projets existants.</li>
+                                </ul>
+
+                                <h3 class="text-xl font-medium mb-3">Exemples d’utilisation :</h3>
+
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-medium mb-2">Exemple 1 : Afficher/Masquer du contenu</h4>
+                                    <p class="text-gray-700 mb-3">Cliquez pour afficher ou masquer le contenu :</p>
+                                    <div x-data="{ open: false }" class="space-y-2">
+                                        <button @click="open = !open" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                                            Toggle Contenu
+                                        </button>
+                                        <div x-show="open" class="p-4 bg-gray-100 border border-gray-300 rounded">
+                                            <p>Voici le contenu qui peut être affiché ou masqué !</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-medium mb-2">Exemple 2 : Formulaire réactif</h4>
+                                    <p class="text-gray-700 mb-3">Affichez votre nom en temps réel :</p>
+                                    <div x-data="{ name: '' }" class="space-y-2">
+                                        <input id="name" type="text" x-model="name" placeholder="Votre nom"
+                                            class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                        <p>Bonjour, <span x-text="name"></span> !</p>
+                                    </div>
+                                </div>
+
+                                <!-- Exemple 3 : Liste dynamique -->
+                                <div x-data="taskManager()" class="max-w-md bg-zinc-200 p-6 mb-7 rounded-lg shadow-lg">
+
+                                    <h4 class="text-lg font-medium mb-2">Exemple 3 : Liste dynamique</h4>
+                                    <form @submit.prevent="addTask" class="flex mb-4">
+                                        <input type="text" x-model="newTask" placeholder="Ajouter une tâche" class="border-zinc-500/20 border flex-grow px-4 py-2 bg-zinc-300 text-zinc-900 rounded-l-lg focus:outline-none">
+                                        <button type="submit" class="hover:border-zinc-800/50 border-zinc-500/20 border px-4 py-2 bg-zinc-400 text-zinc-900 rounded-r-lg">Ajouter</button>
+                                    </form>
+                            
+                                    <div class="flex justify-between mb-4">
+                                        <button @click="filter = 'all'" class="border-zinc-500/20 border px-4 py-2 bg-zinc-300 text-zinc-900 rounded hover:border-zinc-800/50 hover:bg-zinc-400">Toutes </button>
+                                        <button @click="filter = 'active'" class="border-zinc-500/20 border px-4 py-2 bg-zinc-300 text-zinc-900 rounded hover:border-zinc-800/50 hover:bg-zinc-400">Actives</button>
+                                        <button @click="filter = 'completed'" class="border-zinc-500/20 border px-4 py-2 bg-zinc-300 text-zinc-900 rounded hover:border-zinc-800/50 hover:bg-zinc-400">Terminées</button>
+                                    </div>
+                            
+                                    <ul x-show="tasks.length > 0" class="bg-zinc-700 focus:bg-zinc-500 rounded pl-3 pr-1 border-zinc-500/20 border">
+                                        <template x-for="task in filteredTasks" :key="task.id">
+                                            <li class="task flex justify-between items-center my-1 " :class="{ completed: task.completed }">
+                                                <span x-text="task.text" class="flex-grow"></span>
+                                                <div class="flex gap-1">
+                                                    <button @click="toggleTask(task.id)" class="px-2 py-1 border-zinc-500/20 border bg-zinc-400 text-zinc-900 rounded hover:bg-zinc-500">Marquer</button>
+                                                    <button @click="removeTask(task.id)" class="px-2 py-1 border-zinc-500/20 border bg-zinc-400 text-zinc-900 rounded hover:bg-zinc-500">Supprimer</button>
+                                                </div>
+                                                
+                                            </li>
+                                        </template>
+                                    </ul>
+                            
+                                    <div class="flex justify-between mt-4">
+                                        <p>Tâches actives: <span x-text="activeTasks.length"></span></p>
+                                        <p>Tâches terminées: <span x-text="completedTasks.length"></span></p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Exemple 4 : Accordéon simple -->
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-medium mb-2">Exemple 4 : Accordéon simple</h4>
+                                    <p class="text-gray-700 mb-3">Cliquez pour voir plus de détails :</p>
+                                    <div x-data="{ open: false }" class="border p-4 rounded-lg">
+                                        <h5 @click="open = !open" class="cursor-pointer font-medium text-blue-500">Cliquez pour voir plus</h5>
+                                        <div x-show="open" class="mt-2">
+                                            <p>Voici les détails supplémentaires qui sont masqués par défaut !</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-medium mb-3">Conclusion</h3>
+                                <p class="text-gray-700">
+                                    Alpine.js est un excellent choix pour les développeurs recherchant une solution simple et rapide pour ajouter de l’interactivité à leurs applications web, sans la surcharge d’un framework complet.
+                                </p>
+                                <button @click="open1 = !open1" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 mt-8 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
                         </div>
-                        <div id="projet" x-show="open2" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
-                            <h1 @click="open2 = !open2" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        <div id="projet" x-show="open2" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center ">
+                            <button @click="open2 = !open2" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 mt-8 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
                         </div>
-                        <div id="morpion" x-show="open3" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
-                            <h1 @click="open3 = !open3" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        <div id="morpion" x-show="open3" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center">
+                            <div class="app h-full w-full flex justify-center items-center flex-col">
+                                <div class="header h-full w-full flex justify-around items-center ">
+                                    <h1 class=" text-zinc-700 text-6xl font-[Magtis]">Voici le morpion : </h1> <button @click="open3 = !open3" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
+                                </div>
+                                <div class="game h-full w-full flex justify-around items-center ">
+                                    <div x-data="game1()" class="flex flex-col items-center justify-center  style="background: rgb(240, 240, 240);>
+                                        <template x-for="(row, rowIndex) in board">
+                                            <div class="flex">
+                                                <template x-for="(cell, cellIndex) in row">
+                                                    <button @click="makeMove1(rowIndex, cellIndex)" x-text="cell" class="w-32 h-32 border border-gray-400 text-2xl"></button>
+                                                </template>
+                                            </div>
+                                        </template>
+                                        <div x-text="message" class="mt-4 text-xl"></div>
+                                        <button @click="resetGame1()" class="w-40 h-12  mt-4 px-4 py-2 rounded-3xl p-2 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500" >Reset</button> 
+                                    </div>
+                                    <h1 class=" text-zinc-700/0 text-6xl font-[Magtis] select-none">Quit X</h1>
+                                    
+                                </div>
+                            </div>
                         </div>
-                        <div id="puissance" x-show="open4" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
-                            <h1 @click="open4 = !open4" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        <div id="puissance" x-show="open4" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center ">
+                            <div class="app h-full w-full flex justify-center items-center flex-col">
+                                <div class="header h-full w-full flex justify-around items-center ">
+                                    <h1 class=" text-zinc-700 text-6xl font-[Magtis]">Voici le puissance 4 : </h1> <button @click="open4 = !open4" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
+                                </div>
+                                <div class="game h-full w-full flex justify-around items-center ">
+                                    <div x-data="game2()" class="flex flex-col items-center justify-center  style="background: rgb(240, 240, 240);>
+                                        <template x-for="(row, rowIndex) in board">
+                                          <div class="flex">
+                                            <template x-for="(cell, colIndex) in row">
+                                              <button @click="makeMove2(colIndex)" :class="{ 'bg-red-500': cell === 'R', 'bg-yellow-500': cell === 'Y' }" class="w-12 h-12 border border-gray-400"></button>
+                                            </template>
+                                          </div>
+                                        </template>
+                                        <div x-text="message" class="mt-4 text-xl"></div>
+                                        <button @click="resetGame2()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Reset Game</button>
+                                    </div>                                      
+                                    <h1 class=" text-zinc-700/0 text-6xl font-[Magtis] select-none">Quit X</h1>
+                                    
+                                </div>
+                            </div>
                         </div>
-                        <div id="memory" x-show="open5" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
-                            <h1 @click="open5 = !open5" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
-                        </div>
-                        <div id="about" x-show="open6" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
-                            <h1 @click="open6 = !open6" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        <div id="memory" x-show="open5" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center">
+                            <div class="app h-full w-full flex justify-center items-center flex-col">
+                              <div class="header h-full w-full flex justify-around items-center">
+                                <h1 class="text-zinc-700 text-6xl font-[Magtis]">Voici le Memory : </h1>
+                                <button @click="open5 = !open5" class="text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
+                              </div>
+                              <div class="game h-full w-full flex justify-around items-center">
+                                <div x-data="game3()" class="flex flex-col items-center justify-center" style="background: rgb(240, 240, 240);">
+                                  <template x-for="(row, rowIndex) in board">
+                                    <div class="flex">
+                                      <template x-for="(cell, colIndex) in row">
+                                        <button @click="flipCard3(rowIndex, colIndex)" x-text="cell.flipped ? cell.value : '?'" class="w-32 h-32 border border-gray-400 text-2xl"></button>
+                                      </template>
+                                    </div>
+                                  </template>
+                                  <div x-text="message" class="mt-4 text-xl"></div>
+                                  <button @click="resetGame3()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Reset Game</button>
+                                </div>
+                                <h1 class="text-zinc-700/0 text-6xl font-[Magtis] select-none">Quit X</h1>
+                              </div>
+                            </div>
+                          </div>
+                        <div id="about" x-show="open6" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center ">
+                            <button @click="open6 = !open6" class=" text-zinc-700 text-4xl font-[Magtis] cursor-pointer py-4 rounded-3xl p-12 mt-8 shadow-xl bg-zinc-100 hover:scale-110 hover:duration-500 hover:ease-in-out ease-in-out duration-500">Quitter</button>
                         </div>
                         <div x-show="!(open1 || open2 || open3 || open4 || open5 || open6)" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full grid grid-cols-3 grid-rows-2 gap-12">
                             <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div class="absolute h-full w-full flex items-center justify-center"><h1 @click="open1 = !open1" class="text-white text-6xl font-[Magtis] cursor-pointer mix-blend-difference">AlpineJS</h1></div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-black shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
