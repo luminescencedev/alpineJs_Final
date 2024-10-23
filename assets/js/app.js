@@ -135,22 +135,22 @@ function game1() {
     return {
       board: Array(6).fill().map(() => Array(7).fill(null)),
       currentPlayer: 'R',
-      message: 'Player Red turn',
+      message: 'Au joueur Rouge de jouer',
       makeMove2(col) {
         if (this.message.includes('wins')) return;
         for (let row = 5; row >= 0; row--) {
           if (!this.board[row][col]) {
             this.board[row][col] = this.currentPlayer;
             if (this.checkWin2(this.currentPlayer, row, col)) {
-              this.message = `Player ${this.currentPlayer} wins!`;
+              this.message = `Le joueur ${this.currentPlayer} à gagner!`;
               return;
             }
             if (this.checkDraw2()) {
-              this.message = "It's a draw!";
+              this.message = "C'est une égaliter!";
               return;
             }
             this.currentPlayer = this.currentPlayer === 'R' ? 'Y' : 'R';
-            this.message = `Player ${this.currentPlayer} turn`;
+            this.message = `C'est au tour du joueur${this.currentPlayer} de jouer`;
             return;
           }
         }
@@ -198,7 +198,7 @@ function game1() {
       resetGame2() {
         this.board = Array(6).fill().map(() => Array(7).fill(null));
         this.currentPlayer = 'R';
-        this.message = 'Player Red turn';
+        this.message = 'Au joueur Rouge de jouer';
       }
     }
   }
@@ -217,10 +217,10 @@ function game1() {
         this.flippedCards.push(this.board[row][col]);
         if (this.flippedCards.length === 2) {
           if (this.flippedCards[0].value === this.flippedCards[1].value) {
-            this.message = 'Match found!';
+            this.message = 'Match!';
             this.flippedCards = [];
             if (this.checkWin3()) {
-              this.message = 'You win!';
+              this.message = 'Vous avez gagné!';
             }
           } else {
             setTimeout(() => {
