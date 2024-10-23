@@ -15,7 +15,7 @@
     <style>
         [x-cloak] { display: none; }
     </style>
-    <main class="h-[320vh] overflow-hidden z-50">
+    <main class="h-[312vh] overflow-hidden z-50">
         <div class="bg-zinc-950 h-[300vh] w-screen container flex flex-col">
             <section class="wrapper-hero absolute w-[400vw] h-screen will-change-transform flex-grow-[2]">
                 <div class="absolute left-0 h-screen w-screen flex items-center  gap-8 p-6">
@@ -66,60 +66,38 @@
                     </g>
                 </svg>     
             </section>
-            <section class="absolute h-full w-full top-[230vh]">
+            <section class="absolute h-full w-full top-[222vh]">
                 <div class="z-50 h-[100vh] p-16 bg-zinc-100 rounded-3xl">
-                    <div class="h-full w-full p-12 rounded-3xl ombre-int" style="background: rgb(240, 240, 240);">
-                        <div class="h-full w-full grid grid-cols-3 grid-rows-2 gap-12">
-                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-zinc-700 shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
-                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-zinc-700 shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
-                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-zinc-700 shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
-                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-zinc-700 shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
-                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-zinc-700 shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
-                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-zinc-700 shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
+                    <div x-cloak x-data="{ open1: false, open2: false, open3: false, open4: false, open5: false, open6: false }" class="h-full w-full p-12 rounded-3xl ombre-int" style="background: rgb(240, 240, 240);">
+                        <div id="alpine" x-show="open1" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
+                            <h1 @click="open1 = !open1" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        </div>
+                        <div id="projet" x-show="open2" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
+                            <h1 @click="open2 = !open2" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        </div>
+                        <div id="morpion" x-show="open3" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
+                            <h1 @click="open3 = !open3" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        </div>
+                        <div id="puissance" x-show="open4" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
+                            <h1 @click="open4 = !open4" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        </div>
+                        <div id="memory" x-show="open5" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
+                            <h1 @click="open5 = !open5" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        </div>
+                        <div id="about" x-show="open6" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full flex justify-center items-center cursor-pointer">
+                            <h1 @click="open6 = !open6" class="text-zinc-700 text-6xl font-[Magtis] cursor-pointer">COUCOU</h1>
+                        </div>
+                        <div x-show="!(open1 || open2 || open3 || open4 || open5 || open6)" x-transition:enter="duration-500" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave=" duration-50" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="h-full w-full grid grid-cols-3 grid-rows-2 gap-12">
+                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div class="absolute h-full w-full flex items-center justify-center"><h1 @click="open1 = !open1" class="text-white text-6xl font-[Magtis] cursor-pointer mix-blend-difference">AlpineJS</h1></div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-black shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
+                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div class="absolute h-full w-full flex items-center justify-center"><h1 @click="open2 = !open2" class="text-white text-6xl font-[Magtis] cursor-pointer mix-blend-difference">Le Projet !</h1></div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-black shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
+                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div class="absolute h-full w-full flex items-center justify-center"><h1 @click="open3 = !open3" class="text-white text-6xl font-[Magtis] cursor-pointer mix-blend-difference">Morpion </h1></div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-black shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
+                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div class="absolute h-full w-full flex items-center justify-center"><h1 @click="open4 = !open4" class="text-white text-6xl font-[Magtis] cursor-pointer mix-blend-difference">Puissance 4 </h1></div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-black shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
+                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div class="absolute h-full w-full flex items-center justify-center"><h1 @click="open5 = !open5" class="text-white text-6xl font-[Magtis] cursor-pointer mix-blend-difference">Memory</h1></div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-black shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
+                            <div id="card" class="rounded-3xl shadow-md p-2 bg-zinc-100"><div><div class="absolute h-full w-full flex items-center justify-center"><h1 @click="open6 = !open6" class="text-white text-6xl font-[Magtis] cursor-pointer mix-blend-difference text-center">Et moi dans <br> tout ca !</h1></div><div id="button" class="h-[3rem] w-[3rem] rounded-full bg-black shadow-md flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(244 244 245)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- <div class="p-8"></div>
-                        <h2 class="text-4xl font-bold mb-4">Fonctionnalités d'Alpine.js</h2>
-                        <div class="space-y-6">
-                            <div>
-                                <h3 class="text-2xl font-semibold">Réactivité</h3>
-                                <p class="mb-2">Alpine.js permet de rendre vos interfaces réactives avec une syntaxe simple et intuitive.</p>
-                                <div x-data="{ count: 0 }" class="p-4 bg-zinc-200 mx-auto rounded-lg">
-                                    <button @click="count++" class="px-4 py-2 bg-blue-500 text-white rounded">Incrémenter</button>
-                                    <span class="mx-4 text-xl" x-text="count"></span>
-                                    <button @click="count--" class="px-4 py-2 bg-red-500 text-white rounded">Décrémenter</button>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-semibold">Affichage conditionnel</h3>
-                                <p class="mb-2">Affichez ou masquez des éléments en fonction de l'état de vos données.</p>
-                                <div x-data="{ open: false }" class="p-4 bg-zinc-200 rounded-lg">
-                                    <button @click="open = !open" class="px-4 py-2 bg-blue-500 text-white rounded">Afficher/Masquer</button>
-                                    <div x-show="open" class="mt-4 p-4 bg-white rounded shadow">
-                                        Contenu conditionnellement affiché.
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-semibold">Todo List</h3>
-                                <p class="mb-2">Gérez une liste de tâches avec Alpine.js.</p>
-                                <div x-data="{ newTodo: '', todos: [] }" class="p-4 bg-zinc-200 rounded-lg">
-                                    <input x-model="newTodo" type="text" placeholder="Nouvelle tâche" class="px-4 py-2 border rounded w-full mb-2">
-                                    <button @click="if(newTodo.trim() !== '') { todos.push(newTodo); newTodo = ''; }" class="px-4 py-2 bg-blue-500 text-white rounded">Ajouter</button>
-                                    <ul :class="{ 'mt-4': todos.length > 0 }"></ul>
-                                        <template x-for="(todo, index) in todos" :key="index">
-                                            <li class="p-2 bg-white rounded shadow mb-2 flex justify-between items-center">
-                                                <span x-text="todo"></span>
-                                                <button @click="todos.splice(index, 1)" class="px-2 py-1 bg-red-500 text-white rounded">Supprimer</button>
-                                            </li>
-                                        </template>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
         </div>    
 
         
