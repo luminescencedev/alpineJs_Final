@@ -5,6 +5,8 @@
 - **Node.js** (version 14 ou supérieure)
 - **npm** (version 6 ou supérieure)
 - **Un navigateur récent**
+- **Visual Studio Code**
+- **L'extension live server**
 
 ## Installation de l'Application
 
@@ -25,14 +27,14 @@
 
 3. Lancez le serveur de développement :
 
-   ```bash
-   npm start
+   ```
+   Ouvrez directement le fichier index.html ou lancer le l'extension live server et passer a l'étape d'après.
    ```
 
 4. Ouvrez votre navigateur et visitez l'URL suivante pour voir le site web :
 
    ```
-   http://localhost:3000
+   http://localhost:5500
    ```
 
 ## Structure du Projet
